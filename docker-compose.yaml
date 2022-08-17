@@ -3,12 +3,12 @@ version: '3.9'
 services:
   service-generator-1:
     build:
-      context: .
+      context: ./service-generator
       dockerfile: Dockerfile
     container_name: service-generator-1
     hostname: service-generator-1
     ports:
       - "5000:5000"
     environment:
-      - APP_NAME='Service generator \#1'
+      - APP_NAME=Service generator 1
       - PORT=5000
