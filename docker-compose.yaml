@@ -1,12 +1,12 @@
 version: '3.9'
 
 services:
-  service-generator-1:
+  generator-service-1:
     build:
-      context: ./service-generator
+      context: ./generator-service
       dockerfile: Dockerfile
-    container_name: service-generator-1
-    hostname: service-generator-1
+    container_name: generator-service-1
+    hostname: generator-service-1
     ports:
       - "5000:5000"
     environment:
@@ -15,12 +15,12 @@ services:
     networks:
       - main
 
-  service-generator-2:
+  generator-service-2:
     build:
-      context: ./service-generator
+      context: ./generator-service
       dockerfile: Dockerfile
-    container_name: service-generator-2
-    hostname: service-generator-2
+    container_name: generator-service-2
+    hostname: generator-service-2
     ports:
       - "5001:5001"
     environment:
@@ -29,12 +29,12 @@ services:
     networks:
       - main
 
-  service-generator-3:
+  generator-service-3:
     build:
-      context: ./service-generator
+      context: ./generator-service
       dockerfile: Dockerfile
-    container_name: service-generator-3
-    hostname: service-generator-3
+    container_name: generator-service-3
+    hostname: generator-service-3
     ports:
       - "5002:5002"
     environment:
