@@ -15,6 +15,34 @@ services:
     networks:
       - main
 
+  service-generator-2:
+    build:
+      context: ./service-generator
+      dockerfile: Dockerfile
+    container_name: service-generator-2
+    hostname: service-generator-2
+    ports:
+      - "5001:5001"
+    environment:
+      - APP_NAME=Service generator 2
+      - PORT=5001
+    networks:
+      - main
+
+  service-generator-3:
+    build:
+      context: ./service-generator
+      dockerfile: Dockerfile
+    container_name: service-generator-3
+    hostname: service-generator-3
+    ports:
+      - "5002:5002"
+    environment:
+      - APP_NAME=Service generator 3
+      - PORT=5002
+    networks:
+      - main
+
   load-balancer:
     image: nginx:latest
     container_name: load-balancer
