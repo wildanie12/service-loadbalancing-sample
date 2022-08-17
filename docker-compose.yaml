@@ -43,6 +43,48 @@ services:
     networks:
       - main
 
+  inventory-service-1:
+    build:
+      context: ./inventory-service
+      dockerfile: Dockerfile
+    container_name: inventory-service-1
+    hostname: inventory-service-1
+    ports:
+      - "6001:6000"
+    environment:
+      - PORT=6000
+      - APP_SERVICE_NAME=Inventory Service 1
+    networks:
+      - main
+
+  inventory-service-2:
+    build:
+      context: ./inventory-service
+      dockerfile: Dockerfile
+    container_name: inventory-service-2
+    hostname: inventory-service-2
+    ports:
+      - "6002:6000"
+    environment:
+      - PORT=6000
+      - APP_SERVICE_NAME=Inventory Service 2
+    networks:
+      - main
+
+  inventory-service-3:
+    build:
+      context: ./inventory-service
+      dockerfile: Dockerfile
+    container_name: inventory-service-3
+    hostname: inventory-service-3
+    ports:
+      - "6003:6000"
+    environment:
+      - PORT=6000
+      - APP_SERVICE_NAME=Inventory Service 3
+    networks:
+      - main
+
   load-balancer:
     image: nginx:latest
     container_name: load-balancer
